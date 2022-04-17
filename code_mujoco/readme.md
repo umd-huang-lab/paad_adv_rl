@@ -31,7 +31,7 @@ cd ../trainer_atla
 
 ## 2. Training PA-AD Attackers for Pretrained Models
 
-**Downloading Our Pretrained Models**: All of the trained models can be downloaded [Here](https://umd.box.com/s/lezv2f74w3zvgz7n791j0xlkiz2enybw). Please unzip the zip file and place the resulted *models* folder under the root folder *trainer_atla*.
+**Downloading Our Pretrained Models**: All of the trained models can be downloaded [here](https://umd.box.com/s/lezv2f74w3zvgz7n791j0xlkiz2enybw). Please download and place the *models* folder under the root folder *trainer_atla*.
 
 The commands provide the best hyperparameters for the adversary training via a hyperparameter grid search.
 

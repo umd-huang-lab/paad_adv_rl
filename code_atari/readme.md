@@ -27,7 +27,7 @@ pip install -e .
 
 ## 2. Evaluating Pre-trained Models
 
-**Download Our Pretrained Models**: We provide pre-trained models in folder *released_models* that can be downloaded [here][here], where "dqn_victim" and "dqn_attacker" include victim and attacker models for our DQN experiments (Table 1), "a2c_victim" and "a2c_attacker" contain victim and attacker models for our A2C experiments (Table 1).
+**Download Our Pretrained Models**: We provide pre-trained models in folder *released_models* that can be downloaded [here](https://umd.box.com/s/61g7b3dwa5w0utap0056z6ake0fka925), where "dqn_victim" and "dqn_attacker" include victim and attacker models for our DQN experiments (Table 1), "a2c_victim" and "a2c_attacker" contain victim and attacker models for our A2C experiments (Table 1).
 
 Due to the size limit of the supplementary material, the current *released_models* folder only contains pre-trained models in some environments, so that one can quickly check the performance of the attackers using the commands below. 
 All pre-trained models will be released to the public after the paper's acceptance. If the readers would like to reproduce all the experimental results in our paper, please follow the 3rd part of this readme file to train the PA-AD attackers.

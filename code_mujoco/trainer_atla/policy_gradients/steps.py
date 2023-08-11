@@ -956,7 +956,7 @@ def step_with_mode(mode, adversary=False):
         'ppo': ppo_step,
         'robust_ppo': robust_ppo_step,
         'adv_ppo': ppo_step,
-        'adv_pa_ppo': ppo_step,
+        'adv_pa_ppo': robust_ppo_step,
         'adv_trpo': trpo_step,
         'adv_sa_ppo': robust_ppo_step,
     }

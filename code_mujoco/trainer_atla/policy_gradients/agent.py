@@ -94,7 +94,7 @@ class Trainer():
             self.policy_model = self.policy_model.to("cuda:{}".format(self.params.CUDA_ID))
 
         # Instantiate convex relaxation model when mode is 'robust_ppo'
-        if self.MODE == 'robust_ppo' or self.MODE == 'adv_sa_ppo':
+        if self.MODE == 'robust_ppo' or self.MODE == 'adv_sa_ppo' or self.MODE == 'adv_pa_ppo':
             self.create_relaxed_model(time_in_state)
 
         # Minimax training
@@ -339,7 +339,7 @@ class Trainer():
             self.store.add_table('value_data', value_cols)
             self.store.add_table('weight_updates', weight_cols)
 
-        if self.params.MODE == 'robust_ppo' or self.params.MODE == 'adv_sa_ppo':
+        if self.params.MODE == 'robust_ppo' or self.params.MODE == 'adv_sa_ppo' or self.params.MODE == "adv_pa_ppo":
             robust_cols ={
                 'eps': float,
                 'beta': float,
@@ -1138,7 +1138,7 @@ class Trainer():
                 'final_value_loss': val_loss
             })
 
-        if (self.MODE == 'robust_ppo' or self.MODE == 'adv_sa_ppo') and not adversary_step and logging:
+        if (self.MODE == 'robust_ppo' or self.MODE == 'adv_sa_ppo' or self.MODE == 'adv_pa_ppo') and not adversary_step and logging:
             # Logging Robust PPO KL, entropy, etc.
             store_to_pass = self.store
 
@@ -1148,7 +1148,7 @@ class Trainer():
                 saps.advantages, policy_model, policy_params, 
                 store_to_pass, self.n_steps]
 
-        if (self.MODE == 'robust_ppo' or self.MODE == 'adv_sa_ppo') and isinstance(self.policy_model, CtsPolicy) and not adversary_step:
+        if (self.MODE == 'robust_ppo' or self.MODE == 'adv_sa_ppo' or self.MODE == 'adv_pa_ppo') and isinstance(self.policy_model, CtsPolicy) and not adversary_step:
             args += [self.relaxed_policy_model, self.robust_eps_scheduler, self.robust_beta_scheduler]
 
         self.MAX_KL += self.MAX_KL_INCREMENT
@@ -1181,7 +1181,7 @@ class Trainer():
             self.store['paper_constraints_heldout'].flush_row()
             self.store['value_data'].flush_row()
             self.store['weight_updates'].flush_row()
-        if (self.params.MODE == 'robust_ppo' or self.params.MODE == 'adv_sa_ppo') and not adversary_step:
+        if (self.params.MODE == 'robust_ppo' or self.params.MODE == 'adv_sa_ppo' or self.params.MODE == 'adv_pa_ppo') and not adversary_step:
             self.store['robust_ppo_data'].flush_row()
 
         if self.ANNEAL_LR:

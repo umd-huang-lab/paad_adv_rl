@@ -17,11 +17,13 @@ def get_alg_name(name):
     elif 'robust_ppo' in name:
         return 'robust_ppo'
     elif 'adv_sa_ppo' in name:
-        return 'adv_sa_ppo'
+        return 'adv_pa_ppo'
     elif 'adv_ppo' in name:
         return 'adv_ppo'
     elif 'ppo' in name:
         return 'ppo'
+    elif 'adv_pa_ppo' in name:
+        return 'adv_pa_ppo'
     return 'unknown'
 
 def get_env_name(name):
@@ -88,7 +90,7 @@ def main(args):
             def dump_model(sel_ckpts, sel_index_id, sel_path):
                 P = {}
                 # mapper = ch.device('cuda:0')
-                for name in ['val_model', 'policy_model', 'val_opt', 'policy_opt', 'adversary_policy_model', 'adversary_val_model', 'adversary_policy_opt', 'adversary_val_opt']:
+                for name in ['val_model', 'policy_model', 'val_opt', 'policy_opt']:
                     if name in sel_ckpts.df:
                         print(f'Saving {name} out of {len(sel_ckpts.df[name])}')
                         P[name] = sel_ckpts.get_state_dict(sel_ckpts.df[name].iloc[sel_index_id])

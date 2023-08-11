@@ -3,6 +3,7 @@ from auto_LiRPA import BoundedModule, BoundedTensor, BoundedParameter
 from auto_LiRPA.perturbations import *
 
 from policy_gradients.models import activation_with_name
+import torch.nn as nn
 
 
 forward_one = True

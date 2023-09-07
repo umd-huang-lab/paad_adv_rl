@@ -129,6 +129,20 @@ python test.py --config-path configs/config_ant_pa_atla_ppo.json --load-model be
 python test.py --config-path configs/config_ant_pa_atla_ppo.json --load-model best_model.YOUR_EXP_ID.model --attack-eps=0.15 --attack-method action --deterministic
 ```
 
+**Pretrained Models**
+
+We have updated several pretrained models for PA-ATLA-PPO and present their performance below. It's important to note that these pretrained models were selected randomly from training runs using the best hyperparameters. In RL algorithms, variance across training runs can be substantial. Therefore, to provide a robust evaluation, we conducted 30 training runs for each agent configuration. The reported performance metrics in our paper represent the median performance under the strongest attacks, rather than the best or worst case scenarios. Consequently, there may be difference but in variance between our reported results and the performance of the pretrained models.
+
+| Environment        | No attack | Heuristic attack | Evasion attack |
+| ------------------ | --------- | ---------------- | -------------- |
+| Ant-v2 (pertained) | 5329      | 3920             | 3518           |
+| Reported           | 5469      | 4124             | 2986           |
+| HalfCheetah-v2     | 6185      | 5684             | 4472           |
+| Reported           | 6289      | 5226             | 3840           |
+| Hopper-v2          | 3594      | 2866             | 2293           |
+| Reported           | 3449      | 3002             | 1529           |
+
+
 
 **References:**
 
@@ -137,5 +151,4 @@ Huan Zhang, Hongge Chen, Chaowei Xiao, Bo Li, Duane Boning, and Cho-Jui Hsieh. R
 Kaidi Xu, Zhouxing Shi, Huan Zhang, Yihan Wang, Kai-Wei Chang, Minlie Huang, Bhavya Kailkhura, Xue Lin, and Cho-Jui Hsieh. Automatic perturbation analysis for scalable certified robustness and beyond. Advances in Neural Information Processing Systems, 33, 2020.
 
 Huan Zhang, Hongge Chen, Duane Boning, Cho-Jui Hsieh. Robust reinforcement learning on state observations with learned optimal adversary. arXiv preprint arXiv:2101.08452, 2021.
-
 

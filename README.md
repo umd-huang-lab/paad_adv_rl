@@ -11,3 +11,5 @@ OpenReview: https://openreview.net/forum?id=JM2kFbJvvI
 Arxiv: https://arxiv.org/abs/2106.05087
 
 Webpage: https://ycsun2017.github.io/paad/index.html
+
+Pretrained Models: https://drive.google.com/file/d/17PiVw9f59YjnbyLm0hn55ekYP_ElIvbo/view?usp=sharing
